@@ -22,6 +22,10 @@ Your ideas/fixes/algorithms are more than welcome!
 
 |  #  |      Title     |   Solutions   | Time          | Space         | Difficulty  | Tag          | Notes
 |-----|----------------|---------------|---------------|---------------|-------------|--------------|-----
+|737|[Sentence Similarity II](https://leetcode.com/problems/sentence-similarity-ii/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_737.java) | O(nlogk + k) n is the length of max(words1, words2), k is the length of pairs| O(k) | Medium| Union Find
+|735|[Asteroid Collision](https://leetcode.com/problems/asteroid-collision/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_735.java) | O(n) | O(n) | Medium | Stack
+|734|[Sentence Similarity](https://leetcode.com/problems/sentence-similarity/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_734.java) | O(n*k) | O(1) | Easy | HashTable
+|733|[Flood Fill](https://leetcode.com/problems/flood-fill/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_733.java) | O(m*n) | O(m*n) | Easy | BFS, DFS
 |729|[My Calendar I](https://leetcode.com/problems/my-calendar-i/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_729.java) | O(n) | O(n) | Medium |
 |728|[Self Dividing Numbers](https://leetcode.com/problems/self-dividing-numbers/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_728.java) | O(n*k) k is the average number of digits of each number in the given array| O(1) | Easy | 
 |727|[Minimum Window Subsequence](https://leetcode.com/problems/minimum-window-subsequence/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_727.java) | O(m*n) | O(m*n) | Hard | DP
@@ -353,7 +357,7 @@ Your ideas/fixes/algorithms are more than welcome!
 |328|[Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_328.java)| O(n)|O(1) | Medium| Linked List
 |327|[Count of Range Sum](https://leetcode.com/problems/count-of-range-sum/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_327.java)| O(?)|O(?) | Hard|
 |326|[Power of Three](https://leetcode.com/problems/power-of-three/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_326.java)| O(1)|O(1) | Easy| Math
-|325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_325.java)| O(n)|O(n) | Medium| Sort
+|325|[Maximum Size Subarray Sum Equals k](https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_325.java)| O(n)|O(n) | Medium| HashTable
 |324|[Wiggle Sort II](https://leetcode.com/problems/wiggle-sort-ii/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_324.java)| O(n)|O(n) | Medium| Sort
 |323|[Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_323.java)| O(?)|O(?)| Medium|
 |322|[Coin Change](https://leetcode.com/problems/coin-change/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_322.java)| O(n*k)|O(k) | Medium| DP
