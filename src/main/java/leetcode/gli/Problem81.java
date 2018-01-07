@@ -11,6 +11,8 @@ public class Problem81 {
             int hi = nums.length - 1;
             while (lo < hi) {
                 // The only line needed compared to _33.java Solution2
+                // The solution for Problem 33 doesn't work for the case {1,3,1,1,1},
+                // where nums[lo]==nums[mid]==nums[hi]
                 while (lo < hi && nums[lo]==nums[hi]) hi--;
 
                 int mid = (lo + hi) / 2;
