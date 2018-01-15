@@ -22,6 +22,8 @@ Your ideas/fixes/algorithms are more than welcome!
 
 |  #  |      Title     |   Solutions   | Time          | Space         | Video  | Difficulty  | Tag                   
 |-----|----------------|---------------|---------------|---------------|--------|-------------|-------------
+|763|[Partition Labels](https://leetcode.com/problems/partition-labels/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_763.java) | O(n) | O(1) | |Medium|
+|762|[Prime Number of Set Bits in Binary Representation](https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_762.java) | O(n) | O(1) | |Easy|
 |760|[Find Anagram Mappings](https://leetcode.com/problems/find-anagram-mappings/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_760.java) | O(n^2) | O(1) | |Easy| 
 |755|[Reach a Number](https://leetcode.com/problems/reach-a-number/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_755.java) | O(n) | O(1) | |Medium| Math
 |750|[Number Of Corner Rectangles](https://leetcode.com/problems/number-of-corner-rectangles/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_750.java) | O((m*n)^2) | O(1) | |Medium|
@@ -621,9 +623,9 @@ Your ideas/fixes/algorithms are more than welcome!
 |56|[Merge Intervals](https://leetcode.com/problems/merge-intervals/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_56.java)|O(n*logn)|O(1)||Medium| Array, Sort
 |55|[Jump Game](https://leetcode.com/problems/jump-game/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_55.java)|O(n)|O(1)||Medium| Greedy
 |54|[Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_54.java)|O(m*n)|O(m*n)||Medium| Array
-|53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_53.java)|O(n)|O(1)||Easy|
-|52|[N-Queens II](https://leetcode.com/problems/n-queens-ii/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_52.java)|O(?)|O(?)||Hard|
-|51|[N-Queens](https://leetcode.com/problems/n-queens/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_51.java)|O(?)|O(?)||Hard|
+|53|[Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_53.java)|O(n)|O(1)||Easy| Array
+|52|[N-Queens II](https://leetcode.com/problems/n-queens-ii/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_52.java)|O(n!)|O(n)||Hard| Backtracking
+|51|[N-Queens](https://leetcode.com/problems/n-queens/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_51.java)|O(n!)|O(n)||Hard|
 |50|[Pow(x, n)](https://leetcode.com/problems/powx-n/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_50.java)|O(logn)|O(logn)||Medium|
 |49|[Group Anagrams](https://leetcode.com/problems/group-anagrams/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_49.java)|O(m*klogk)|O(m*k)||Medium| HashMap
 |48|[Rotate Image](https://leetcode.com/problems/rotate-image/)|[Solution](../master/src/main/java/com/fishercoder/solutions/_48.java)|O(n^2)|O(1)| |Medium | Array
