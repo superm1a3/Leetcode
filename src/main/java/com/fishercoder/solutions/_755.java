@@ -1,47 +1,154 @@
 package com.fishercoder.solutions;
 
 /**
- * 755. Reach a Number
+ * 755. Pour Water
  *
- * You are standing at position 0 on an infinite number line. There is a goal at position target.
- * On each move, you can either go left or right. During the n-th move (starting from 1), you take n steps.
- * Return the minimum number of steps required to reach the destination.
+ * We are given an elevation map, heights[i] representing the height of the terrain at that index.
+ * The width at each index is 1. After V units of water fall at index K, how much water is at each index?
+ * Water first drops at index K and rests on top of the highest terrain or water at that index.
+ * Then, it flows according to the following rules:
+
+ If the droplet would eventually fall by moving left, then move left.
+ Otherwise, if the droplet would eventually fall by moving right, then move right.
+ Otherwise, rise at it's current position.
+
+ Here, "eventually fall" means that the droplet will eventually be at a lower level if it moves in that direction. Also, "level" means the height of the terrain plus any water in that column.
+ We can assume there's infinitely high terrain on the two sides out of bounds of the array. Also, there could not be partial water being spread out evenly on more than 1 grid block - each unit of water has to be in exactly one block.
 
  Example 1:
- Input: target = 3
- Output: 2
+ Input: heights = [2,1,1,2,1,2,2], V = 4, K = 3
+ Output: [2,2,2,3,2,2,2]
  Explanation:
- On the first move we step from 0 to 1.
- On the second step we step from 1 to 3.
+ #       #
+ #       #
+ ##  # ###
+ #########
+ 0123456    <- index
+
+ The first drop of water lands at index K = 3:
+
+ #       #
+ #   w   #
+ ##  # ###
+ #########
+ 0123456
+
+ When moving left or right, the water can only move to the same level or a lower level.
+ (By level, we mean the total height of the terrain plus any water in that column.)
+ Since moving left will eventually make it fall, it moves left.
+ (A droplet "made to fall" means go to a lower height than it was at previously.)
+
+ #       #
+ #       #
+ ## w# ###
+ #########
+ 0123456
+
+ Since moving left will not make it fall, it stays in place.  The next droplet falls:
+
+ #       #
+ #   w   #
+ ## w# ###
+ #########
+ 0123456
+
+ Since the new droplet moving left will eventually make it fall, it moves left.
+ Notice that the droplet still preferred to move left,
+ even though it could move right (and moving right makes it fall quicker.)
+
+ #       #
+ #  w    #
+ ## w# ###
+ #########
+ 0123456
+
+ #       #
+ #       #
+ ##ww# ###
+ #########
+ 0123456
+
+ After those steps, the third droplet falls.
+ Since moving left would not eventually make it fall, it tries to move right.
+ Since moving right would eventually make it fall, it moves right.
+
+ #       #
+ #   w   #
+ ##ww# ###
+ #########
+ 0123456
+
+ #       #
+ #       #
+ ##ww#w###
+ #########
+ 0123456
+
+ Finally, the fourth droplet falls.
+ Since moving left would not eventually make it fall, it tries to move right.
+ Since moving right would not eventually make it fall, it stays in place:
+
+ #       #
+ #   w   #
+ ##ww#w###
+ #########
+ 0123456
+
+ The final answer is [2,2,2,3,2,2,2]:
+
+ #
+ #######
+ #######
+ 0123456
+
 
  Example 2:
- Input: target = 2
- Output: 3
+ Input: heights = [1,2,3,4], V = 2, K = 2
+ Output: [2,3,3,4]
  Explanation:
- On the first move we step from 0 to 1.
- On the second move we step  from 1 to -1.
- On the third move we step from -1 to 2.
+ The last droplet settles at index 1, since moving further left would not cause it to eventually fall to a lower height.
 
+
+ Example 3:
+ Input: heights = [3,1,3], V = 5, K = 1
+ Output: [4,4,4]
  Note:
- target will be a non-zero integer in the range [-10^9, 10^9].
+
+ heights will have length in [1, 100] and contain integers in [0, 99].
+ V will be in range [0, 2000].
+ K will be in range [0, heights.length - 1].
  */
 
 public class _755 {
   public static class Solution1 {
-    /**Two case:
-     * 1. go to the right, and reach the goal exactly.
-     * 2. go over the goal by several steps:
-     *    by even number, then you can choose one of the steps that went right to go back to the left (the step is half of what you went over)
-     *    by odd number, then you keep going until you are over by an even number.*/
-    public int reachNumber(int target) {
-      int absTarget = Math.abs(target);
-      int steps = 1;
-      int sum = 0;
-      while (sum < absTarget || (sum - absTarget) % 2 == 1) {
-        sum += steps;
-        steps++;
+    public int[] pourWater(int[] heights, int V, int K) {
+      int index;
+      while (V > 0) {
+        index = K;
+        for (int i = K - 1; i >= 0; i--) {
+          if (heights[i] > heights[index]) {
+            break;
+          } else if (heights[i] < heights[index]) {
+            index = i;
+          }
+        }
+        if (index != K) {
+          heights[index]++;
+          V--;
+          continue;
+        }
+
+        for (int i = K + 1; i < heights.length; i++) {
+          if (heights[i] > heights[index]) {
+            break;
+          } else if (heights[i] < heights[index]) {
+            index = i;
+          }
+        }
+        heights[index]++;
+        V--;
       }
-      return steps - 1;
+      return heights;
     }
   }
 }
