@@ -1,7 +1,5 @@
 package leetcode.gli;
 
-import com.fishercoder.common.classes.ListNode;
-
 import java.util.Arrays;
 
 public class Problem165 {
@@ -27,10 +25,10 @@ public class Problem165 {
                 return 0;
             } else if (v1.length > v2.length) {
                 String rest = String.join("",  Arrays.copyOfRange(v1, i, v1.length));
-                return new Integer(rest).compareTo(new Integer(0));
+                return Integer.valueOf(rest).compareTo(Integer.valueOf(0));
             } else {
                 String rest = String.join("",  Arrays.copyOfRange(v2, i, v2.length));
-                return new Integer(0).compareTo(new Integer(rest));
+                return Integer.valueOf(0).compareTo(Integer.valueOf(rest));
             }
         }
     }
